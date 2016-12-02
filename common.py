@@ -15,7 +15,7 @@ def specification(data):
 
 
 def search_in_file(search, specific):
-    with open("to_do.csv", "r") as file:
+    with open("to_do.txt", "r") as file:
         lines = file.readlines()
     searched = []
     for data in lines:
@@ -25,7 +25,7 @@ def search_in_file(search, specific):
 
 
 def get_user_names():
-    with open("to_do.csv", "r") as file:
+    with open("to_do.txt", "r") as file:
         lines = file.readlines()
     user_list = []
     for data in lines:

@@ -5,12 +5,13 @@ import common
 
 def update(start=False):
     if start is False:
+        os.system("git remote add fd9 https://github.com/davidszilagyi/FD9.git")
         os.system("git add to_do.csv")
         os.system("git commit -m 'csv file changed'")
-        os.system("git pull https://github.com/davidszilagyi/FD9")
-        os.system("git push https://github.com/davidszilagyi/FD9.git")
+        os.system("git pull fd9 master")
+        os.system("git push fd9 master")
     else:
-        os.system("git pull https://github.com/davidszilagyi/FD9")
+        os.system("git pull fd9 master")
         ui.print_message("database update")
 
 
@@ -36,7 +37,7 @@ def get_user_name(start=False):
 
 
 def write_out(user, data_to_write):
-    with open("to_do.csv", "a") as file:
+    with open("to_do.txt", "a") as file:
         lines = file.readlines()
     current_line = 0
     for data in lines:
