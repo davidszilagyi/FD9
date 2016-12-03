@@ -13,15 +13,11 @@ common = SourceFileLoader("common", main_path + "/common.py").load_module()
 
 def start(username):
     module_name = "FD9's to do manager"
-    main_options = ["User menu", "Add new user", "Change user", "Add new task", "Show all available tasks",
-                    "Show all taken tasks", "Show trash", "Exit"]
+    main_options = ["User menu", "Add new task", "Show all available tasks", "Show all taken tasks", "Show trash", 
+                    "Exit"]
     menu = ui.print_main_menu(main_options, module_name)
     if menu == "User menu":
         user_menu(username)
-    elif menu == "Add new user":
-        pass
-    elif menu == "Change user":
-        pass
     elif menu == "Add new task":
         pass
     elif menu == "Show all available tasks":

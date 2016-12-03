@@ -16,8 +16,15 @@ def get_user_name():
             ui.print_welcome(user[0])
             return user[0]
     ui.print_welcome("new user", user[0])
-    #write_out(user, user)
-    return user[0]
+    while True:
+        question = ui.get_inputs(["Is it correct (Y\\N)? "], "")
+        if question[0].lower() == "y":
+            new_user = user_search
+            #write_out(user, user)
+            return user[0]
+        else:
+            user = get_user_name()
+            return user
 
 
 def generate_random(table):
