@@ -6,6 +6,7 @@ import common
 def update(start=False):
     if start is False:
         os.system("git remote add fd9 https://github.com/davidszilagyi/FD9.git")
+        os.system("clear")
         os.system("git add to_do.txt")
         os.system("git commit -m 'database updated'")
         os.system("git pull fd9 master")
