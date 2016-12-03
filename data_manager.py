@@ -6,34 +6,14 @@ import common
 def update(start=False):
     if start is False:
         os.system("git remote add fd9 https://github.com/davidszilagyi/FD9.git")
-        os.system("git add to_do.csv")
-        os.system("git commit -m 'csv file changed'")
+        os.system("git add to_do.txt")
+        os.system("git commit -m 'database updated'")
         os.system("git pull fd9 master")
         os.system("git push fd9 master")
+        ui.print_message("database update")
     else:
         os.system("git pull fd9 master")
-        ui.print_message("database update")
-
-
-def get_user_name(start=False):
-    with open("to_do.csv", "r") as file:
-        lines = file.readlines()
-    if start is False:
-        user = ui.get_inputs(["Please enter the new username: "], "")
-        user = "user:" + user
-        write_out(user, user)
-    else:
-        user = ui.get_inputs(["Please enter your username: "], "")
-        user = "user:" + user
-        for data in lines:
-            if user == data:
-                user = data
-                ui.print_welcome(user)
-            else:
-                user = ui.get_inputs([ui.print_welcome() + "\nPlease enter your username: "], "")
-                user = "user:" + user
-                write_out(user, user)
-    return user
+        os.system("clear")
 
 
 def write_out(user, data_to_write):

@@ -8,11 +8,11 @@ main_path = os.path.dirname(os.path.abspath(__file__))
 data_manager = SourceFileLoader("data_manager", main_path + "/data_manager.py").load_module()
 
 
-def print_welcome(message="new user"):
+def print_welcome(message="new user", username=""):
     if message == "new user":
-        print("Welcome " + message)
+        print("Welcome " + message + "! You will use this username: " + str(username))
     else:
-        print("Welcome back" + str(message))
+        print("Welcome back " + str(message) + "!")
 
 
 def print_message(message):
@@ -20,25 +20,26 @@ def print_message(message):
 
 
 def get_inputs(datas_name, title):
-    inputs = []
     print(title)
+    inputs = []
     for elements in range(len(datas_name)):
         inputs.append(input(datas_name[elements]))
     return inputs
 
 
 def print_main_menu(table, title):
+    os.system("clear")
     options = []
     for elements in table:
         options.append(elements)
-    options.append("Exit")
     questions = [inquirer.List("menu", message=title, choices=options,)]
     answer = inquirer.prompt(questions)
     return answer["menu"]
 
 
 def print_sub_menu(table, title):
-    questions = [inquirer.List('menu', message=title, choices=options,)]
+    os.system("clear")
+    questions = [inquirer.List('menu', message=title, choices=table,)]
     answer = inquirer.prompt(questions)
     return answer["menu"]
 
@@ -56,4 +57,3 @@ def get_help():
           "Show available tasks:\nYou will see what tasks are available.\n\n" +
           "Take from available tasks:\nYou will need to select the id of the task than it will be add to your tasks\n")
     return_to_menu = input("Please enter any key from your keyboard to go back to the menu...")
-    
