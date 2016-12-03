@@ -10,9 +10,11 @@ data_manager = SourceFileLoader("data_manager", main_path + "/data_manager.py").
 
 def print_welcome(message="new user", username=""):
     if message == "new user":
-        print("Welcome " + message + "! You will use this username: " + str(username))
+        print("Welcome " + message + "! The program will use this username: " + str(username))
+        time.sleep(4)
     else:
         print("Welcome back " + str(message) + "!")
+        time.sleep(2)
 
 
 def print_message(message):
