@@ -11,39 +11,48 @@ data_manager = SourceFileLoader("data_manager", main_path + "/data_manager.py").
 common = SourceFileLoader("common", main_path + "/common.py").load_module()
 
 
-def start():
-    user = data_manager.get_user_name(True)
-    data_manager.update(True)
+def start(username):
     module_name = "FD9's to do manager: "
-    user_list = common.get_user_names()
-    while True:
-        menu = ui.print_main_menu(user_list, module_name)
-        if menu["menu"] == "Add new user":
-            pass
-        elif menu["menu"] == "Exit":
-            sys.exit()
-        else:
-            options = ["Show tasks", "Add", "Update", "Remove", "Show trash", "Move from trash", "Back to main menu"]
-            while True:
-                sub_menu = ui.print_sub_menu(options, menu["menu"])
-                if sub_menu["menu"] == "Show tasks":
-                    pass
-                elif sub_menu["menu"] == "Add":
-                    pass
-                elif sub_menu["menu"] == "Update":
-                    pass
-                elif sub_menu["menu"] == "Remove":
-                    pass
-                elif sub_menu["menu"] == "Show trash":
-                    pass
-                elif sub_menu["menu"] == "Move from trash":
-                    pass
-                elif sub_menu["menu"] == "Back to main menu":
-                    break
+    main_options = ["User menu", "Add new user", "Add new task", "Show all available tasks", "Show all taken tasks",
+                    "Exit"]
+    menu = ui.print_main_menu(main_options, module_name)
+    if menu == "User menu":
+        user_menu(username)
+    elif menu == "Add new user":
+        pass
+    elif menu == "Add new task":
+        pass
+    elif menu == "Show all available tasks":
+        pass
+    elif menu == "Show all taken tasks":
+        pass
+    elif menu == "Exit":
+        sys.exit()
+
+
+def user_menu(username):
+    module_name = "User menu"
+    sub_menu = ui.print_sub_menu(user_list, module_name)
+    if sub_menu == "Show tasks":
+        pass
+    elif sub_menu == "Add":
+        pass
+    elif sub_menu == "Update":
+        pass
+    elif sub_menu == "Remove":
+        pass
+    elif sub_menu == "Show available tasks":
+        pass
+    elif sub_menu == "Take from available tasks":
+        pass
+    elif sub_menu == "Back to main menu":
+        start(username)
 
 
 def main():
-    start()
+    data_manager.update(True)
+    user = data_manager.get_user_name(True)
+    start(user)
 
 if __name__ == "__main__":
     main()

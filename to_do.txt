@@ -1,4 +1,8 @@
-user:DavidSzilagyi:[[xD87Dj#&,Implement other functions,0,09/12/16],[kR56Sc#&,Test functions,0,09/12/16],[aX31Ae#&,Others,1,09/12/16]]
-user:TamasKenyeres:[[cR76As#&,Valami,2,09/12/16],[gH32Qw#&,Valami2,1,09/12/16]]
-user:MateJakubinyi:[[gF12Wc#&,Nem tudom,2,09,12,16]]
-Trash:{DavidSzilagyi:[[yW64Qf#&,Dont know,0,09/12/16],[rD51Rt#&,Something,2,09,16],TamasKenyeres[[fD21Fd#&,Valami3,0,09/12/16]]}
+user:DavidSzilagyi
+DavidSzilagyi:[[xD87Dj#&,Implement other functions,0,02/12/16,09/12/16],[kR56Sc#&,Test functions,0,02/12/16,09/12/16],[aX31Ae#&,Others,1,02/12/16,09/12/16]]
+user:TamasKenyeres
+TamasKenyeres:[[cR76As#&,Valami,2,02/12/16,09/12/16],[gH32Qw#&,Valami2,1,02/12/16,09/12/16]]
+user:MateJakubinyi
+MateJakubinyi:[[gF12Wc#&,Nem tudom,2,02/12/16,09/12/16]]
+Available:[[yS31Ad#&,XXXX,0,02/12/16,00/00/00],[yW64Qf#&,Dont know,0,02/12/16,09/12/16],[rD51Rt#&,Something,2,02/12/16,09,16],[fD21Fd#&,Valami3,0,02/12/16,09/12/16]]]
+Trash:{DavidSzilagyi:[[yW64Qf#&,Dont know,0,02/12/16,09/12/16],[rD51Rt#&,Something,2,02/12/16,09,16],TamasKenyeres[[fD21Fd#&,Valami3,0,02/12/16,09/12/16]]}

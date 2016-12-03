@@ -33,12 +33,14 @@ def print_main_menu(table, title):
         options.append(elements)
     options.append("Exit")
     questions = [inquirer.List("menu", message=title, choices=options,)]
-    return inquirer.prompt(questions)
+    answer = inquirer.prompt(questions)
+    return answer["menu"]
 
 
 def print_sub_menu(table, title):
     questions = [inquirer.List('menu', message=title, choices=options,)]
-    return inquirer.prompt(questions)
+    answer = inquirer.prompt(questions)
+    return answer["menu"]
 
 
 def get_help():
@@ -49,7 +51,9 @@ def get_help():
           "Update:\nYou will need to select the id of the task, then you can choose from these options:\n" +
           "started (0), half completed (1), completed and pushed to git (2).\n" +
           "\033[1m" + "Also need the deadline (must be in date form (mm/dd/yy): 31/12/16" + "\033[0m\n\n" +
-          "Remove:\nYou will need to select the id of the task what you want to remove\n\n"
-          "Show trash:\nYou will see what tasks is in the trash for each user.\n\n" +
-          "Move from trash:\nYou will need to select the id of the task than it will be add to your tasks\n")
+          "Remove:\nYou will need to select the id of the task what you want to remove.\n" +
+          "It will be added to trash by your user name and also to available tasks.\n\n"
+          "Show available tasks:\nYou will see what tasks are available.\n\n" +
+          "Take from available tasks:\nYou will need to select the id of the task than it will be add to your tasks\n")
     return_to_menu = input("Please enter any key from your keyboard to go back to the menu...")
+    
