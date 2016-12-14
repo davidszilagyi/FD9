@@ -13,7 +13,7 @@ common = SourceFileLoader("common", main_path + "/common.py").load_module()
 
 def start(username):
     module_name = "FD9's to do manager"
-    main_options = ["User menu", "Add new task", "Show all available tasks", "Show all taken tasks", "Show trash", 
+    main_options = ["User menu", "Add new task", "Show all available tasks", "Show all taken tasks", "Show trash",
                     "Exit"]
     menu = ui.print_main_menu(main_options, module_name)
     if menu == "User menu":
@@ -55,7 +55,14 @@ def user_menu(username):
 
 def main():
     os.chdir(main_path)
-    data_manager.update(True)
+    while True:
+        ask = input("Do you want to update the database (Y\\N)? ")
+        if ask.lower() == "y":
+            data_manager.update(True)
+            break
+        elif ask.lower() == "n":
+            ui.warning("database")
+            break
     user = common.get_user_name()
     start(user)
 

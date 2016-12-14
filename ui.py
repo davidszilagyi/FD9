@@ -45,6 +45,11 @@ def print_sub_menu(table, title):
     return answer["menu"]
 
 
+def warning(string):
+    print("\033[91m", "WARNING! " + string + " will not be updated!", "\033[0m")
+    time.sleep(2)
+
+
 def get_help():
     print("Show tasks:\nYou can see what tasks is created for the current user\n\n" +
           "Add:\nUnique id is created automatically for the task.\nPlease enter the name of the task." +
